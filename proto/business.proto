@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option csharp_namespace = "Repro.Services";
+
+import public "contracts.proto";
+
+service Business
+{
+  rpc Save(SaveRequest) returns (SaveResponse);
+  
+  rpc Load(LoadRequest) returns (LoadResponse);
+}
+
+message SaveRequest
+{
+  Entity entity = 1;
+}
+
+message SaveResponse
+{
+  
+}
+
+message LoadRequest
+{
+  string id = 1;
+}
+
+message LoadResponse
+{
+  Entity entity = 1;
+}

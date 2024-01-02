@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option csharp_namespace = "Repro.Services";
+
+import public "contracts.proto";
+
+service Storage
+{
+  rpc Write(WriteRequest) returns (WriteResponse);
+  
+  rpc Read(ReadRequest) returns (ReadResponse);
+}
+
+message WriteRequest
+{
+  Entity entity = 1;
+}
+
+message WriteResponse
+{
+  
+}
+
+message ReadRequest
+{
+  string id = 1;
+}
+
+message ReadResponse
+{
+  Entity entity = 1;
+}
